@@ -1,4 +1,4 @@
-// Sprite Tracker: tracks your Fortnite Sprite collection. All the work happens in ui/; Rust only reads Muck95's theme.
+// Spritz: tracks your Fortnite Sprite collection. All the work happens in ui/; Rust only reads Muck95's theme.
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 // Muck95's settings.json (dark mode, accent colour), or "" when Muck95 isn't installed.
@@ -14,5 +14,5 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![muck95_settings])
         .run(tauri::generate_context!())
-        .expect("Sprite Tracker failed to start");
+        .expect("Spritz failed to start");
 }

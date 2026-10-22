@@ -1,4 +1,4 @@
-// Sprite Tracker. Data: sprites.json (bundled), refreshed from GitHub, plus anything new on the Fortnite Wiki.
+// Spritz. Data: sprites.json (bundled), refreshed from GitHub, plus anything new on the Fortnite Wiki.
 "use strict";
 const FEED = "https://raw.githubusercontent.com/rileyc313/sprite-tracker/main/ui/sprites.json";
 const WIKI = "https://fortnite.fandom.com/api.php";
@@ -101,11 +101,14 @@ function art(v) {
     : `<div class="fallback" style="--rc:${rc(v.sp.rarity)}">${BLOB}<b>${esc(initials(v.sp.name))}</b></div>`;
 }
 
+// in-game style crown for mastered sprites
+const CROWN = `<svg class="crown" viewBox="0 0 24 16"><path d="M2 5l5 4 5-8 5 8 5-4-2 10H4z" fill="#F7C531" stroke="#8A5A00" stroke-width="1.4" stroke-linejoin="round"/><path d="M4.6 12.5h14.8" stroke="#8A5A00" stroke-width="1.2"/><circle cx="12" cy="1.6" r="1.4" fill="#F7C531" stroke="#8A5A00"/></svg>`;
+
 function tile(v, label) {
   const p = progress[v.key] || {};
-  return `<div class="tile raised ${p.o ? "" : "missing"}" data-key="${esc(v.key)}" data-tip="${esc(tipFor(v))}">
+  return `<div class="tile raised ${p.o ? "" : "missing"} ${p.m ? "mastered" : ""}" data-key="${esc(v.key)}" data-tip="${esc(tipFor(v))}">
     ${isNew(v) ? `<span class="newtag">NEW</span>` : ""}${v.src ? `<span class="src">${v.src}</span>` : ""}
-    <div class="art sunken">${art(v)}<div class="ribbon" style="--vc:${v.color}"></div></div>
+    <div class="art sunken">${art(v)}${p.m ? CROWN : ""}<div class="ribbon" style="--vc:${v.color}"></div></div>
     <div class="vname">${esc(label)}</div>
     <div class="sub">${esc(v.how || (label === v.type ? (season().variantTypes[v.type] || {}).effect || v.sp.rarity : v.sp.rarity))}</div>
     <div class="acts"><label class="chk"><input type="checkbox" data-own ${p.o ? "checked" : ""}>Owned</label>
@@ -130,7 +133,7 @@ function render() {
       (order => shown.slice().sort((a, b) => order.indexOf(a.sp.id) - order.indexOf(b.sp.id)))(sortSprites(spritesOf(s)).map(sp => sp.id)).map(v => {
         const p = progress[v.key] || {}, img = (picture(v) || {}).url;
         return `<tr class="${p.o ? "" : "missing"}" data-key="${esc(v.key)}" data-tip="${esc(tipFor(v))}">
-          <td>${img ? `<img class="thumb" src="${esc(img)}" alt="" referrerpolicy="no-referrer">` : `<span class="chip" style="--rc:${v.color}">&nbsp;</span>`}</td>
+          <td class="${p.m ? "mastered" : ""}">${p.m ? CROWN : ""}${img ? `<img class="thumb" src="${esc(img)}" alt="" referrerpolicy="no-referrer">` : `<span class="chip" style="--rc:${v.color}">&nbsp;</span>`}</td>
           <td>${esc(v.sp.name)}${isNew(v) ? ` <span class="chip" style="--rc:#C00000">NEW</span>` : ""}</td><td>${esc(v.type)}</td>
           <td><span class="chip" style="--rc:${rc(v.sp.rarity)}">${esc(v.sp.rarity)}</span></td><td>${fmtDate(v.added)}</td><td>${esc(v.how)}</td>
           <td><input type="checkbox" data-own ${p.o ? "checked" : ""}></td><td><button class="star ${p.m ? "on" : ""}" data-master>★</button></td></tr>`;
@@ -449,7 +452,7 @@ async function importDialog() {
     for (const [k, v] of Object.entries(d.custom || {})) custom[k] = Array.isArray(v) ? [...(custom[k] || []).filter(a => !v.some(b => b.id === a.id)), ...v] : { ...(custom[k] || {}), ...v };
     save("progress", progress); save("custom", custom); fillSelects(); render();
     say("Import backup", `<p>Imported ${Object.keys(d.progress || {}).length} marks.</p>`);
-  } catch { say("Import backup", "<p>That doesn't look like a Sprite Tracker backup.</p>"); }
+  } catch { say("Import backup", "<p>That doesn't look like a Spritz backup.</p>"); }
 }
 
 const HELP = `<p><b>Tick Owned</b> on every sprite variant you've extracted. Click <b>★</b> when it's mastered (Level 5).</p>
@@ -480,7 +483,7 @@ async function act(a) {
   else if (a === "dim") { setPrefs({ dim: !prefs.dim }); }
   else if (a === "hideEmpty") { setPrefs({ hideEmpty: !prefs.hideEmpty }); render(); }
   else if (a === "help") say("How to use", HELP);
-  else if (a === "about") say("About Sprite Tracker", `<p><b>Sprite Tracker</b> 1.0 for Fortnite Sprites.</p><p>Sprite list updated ${fmtDate(feed.updated)}. Pictures and new finds come from the Fortnite Wiki (fortnite.fandom.com, CC BY-SA). Not affiliated with Epic Games.</p>`);
+  else if (a === "about") say("About Spritz", `<p><b>Spritz</b> 1.0 for Fortnite Sprites.</p><p>Sprite list updated ${fmtDate(feed.updated)}. Pictures come from the Fortnite Wiki (fortnite.fandom.com, CC BY-SA) and Beebom; new finds from the wiki. Not affiliated with Epic Games.</p>`);
   else if (a === "reset") { $("search").value = ""; ["fRarity", "fType", "fShow"].forEach(id => $(id).value = ""); render(); }
 }
 

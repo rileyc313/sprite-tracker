@@ -1,4 +1,4 @@
-# Sprite Tracker
+# Spritz
 
 A Windows desktop app for tracking your Fortnite Sprite collection, styled like Windows 95 (it follows [Muck95](https://github.com/rileyc313/muck95)'s theme when Muck95 is installed).
 
@@ -21,6 +21,6 @@ Tauri 2 with zero Rust logic beyond reading Muck95's theme; the UI is `ui/`.
 cargo build --release
 ```
 
-Then copy `target\release\sprite-tracker.exe` to `%LOCALAPPDATA%\Programs\Sprite Tracker\Sprite Tracker.exe`.
+Then copy `target\release\sprite-tracker.exe` to `%LOCALAPPDATA%\Programs\Spritz\Spritz.exe`.
 
 Not affiliated with Epic Games. Wiki content from fortnite.fandom.com (CC BY-SA).

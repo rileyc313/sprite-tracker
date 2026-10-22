@@ -1,4 +1,4 @@
-/* Sprite Tracker: Muck95's Windows 95 look. Colours are Muck95's App.Palette pairs; app.js swaps them. */
+/* Spritz: Muck95's Windows 95 look. Colours are Muck95's App.Palette pairs; app.js swaps them. */
 :root {
   --face: #C0C0C0; --hi: #FFFFFF; --light: #DFDFDF; --shadow: #808080; --dark: #000000;
   --text: #000000; --dim: #808080; --hover: #CDCDCD; --field: #FFFFFF; --tip: #FFFFE1;
@@ -157,3 +157,7 @@ table.grid .thumb { width: 28px; height: 28px; object-fit: contain; vertical-ali
 ::-webkit-scrollbar-button:single-button { background: var(--face); height: 16px; width: 16px; border: 1px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: inset 1px 1px var(--hi), inset -1px -1px var(--shadow); }
 ::-webkit-scrollbar-corner { background: var(--face); }
 input::-webkit-calendar-picker-indicator { display: none !important; }
+.crown { position: absolute; top: 1px; left: 50%; transform: translateX(-50%); width: 26px; height: 18px; z-index: 1; filter: drop-shadow(0 1px 1px rgba(0,0,0,.5)); }
+.tile.mastered .art { box-shadow: inset 0 0 0 2px #F7C531; }
+table.grid td.mastered { position: relative; }
+table.grid td.mastered .crown { top: -3px; width: 16px; height: 11px; }
