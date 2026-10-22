@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprite Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="win" class="raised">
+  <div id="title" data-tauri-drag-region>
+    <img src="img/icon.png" alt="">
+    <span>Sprite Tracker</span>
+    <button id="bMin" title="Minimize">0</button><button id="bMax" title="Maximize">1</button><button id="bClose" class="close" title="Close">r</button>
+  </div>
+
+  <div id="menubar">
+    <div class="menu"><span class="mlabel"><u>F</u>ile</span><div class="drop raised">
+      <div data-act="update">Check for new sprites<kbd>F5</kbd></div><hr>
+      <div data-act="export">Export backup...</div>
+      <div data-act="import">Import backup...</div><hr>
+      <div data-act="exit">Exit</div>
+    </div></div>
+    <div class="menu"><span class="mlabel"><u>E</u>dit</span><div class="drop raised">
+      <div data-act="add">Add sprite or variant...</div>
+      <div data-act="removeCustom">Remove a sprite you added...</div><hr>
+      <div data-act="ownShown">Mark all shown as owned</div>
+      <div data-act="clearShown">Clear marks on all shown...</div>
+    </div></div>
+    <div class="menu"><span class="mlabel"><u>V</u>iew</span><div class="drop raised">
+      <div data-view="sprite">By sprite</div>
+      <div data-view="type">By variant type</div>
+      <div data-view="list">Details list</div><hr>
+      <div data-act="dim">Fade sprites I don't own</div>
+      <div data-act="hideEmpty">Hide sprites with nothing to show</div><hr>
+      <div data-theme="muck">Theme: follow Muck95</div>
+      <div data-theme="light">Theme: light</div>
+      <div data-theme="dark">Theme: dark</div>
+    </div></div>
+    <div class="menu"><span class="mlabel"><u>H</u>elp</span><div class="drop raised">
+      <div data-act="help">How to use</div>
+      <div data-act="about">About Sprite Tracker</div>
+    </div></div>
+  </div>
+
+  <div id="toolbar">
+    <select id="season" title="Season"></select>
+    <span class="sep"></span>
+    <input id="search" type="text" placeholder="Search sprites, variants, codes..." spellcheck="false">
+    <select id="fRarity" title="Rarity"><option value="">All rarities</option></select>
+    <select id="fType" title="Variant type"><option value="">All variants</option></select>
+    <select id="fShow" title="Show">
+      <option value="">Everything</option>
+      <option value="missing">Missing</option>
+      <option value="owned">Owned</option>
+      <option value="unmastered">Owned, not mastered</option>
+      <option value="mastered">Mastered</option>
+      <option value="new">New (last 14 days)</option>
+    </select>
+    <select id="fSort" title="Sort">
+      <option value="rarity">Sort: rarity</option>
+      <option value="name">Sort: name</option>
+      <option value="newest">Sort: newest</option>
+    </select>
+    <span class="sep"></span>
+    <button id="bUpdate" title="Check the feed and the Fortnite Wiki for new sprites (F5)">Check for new</button>
+  </div>
+
+  <div id="main">
+    <div id="side">
+      <fieldset><legend>Collection</legend>
+        <div class="big" id="sTotal">0 / 0</div>
+        <div class="bar sunken"><i id="sBar" style="width:0"></i></div>
+        <div style="margin-top:5px" id="sMastered"></div>
+      </fieldset>
+      <fieldset><legend>By rarity</legend><div id="sRarity"></div></fieldset>
+      <fieldset><legend>By variant</legend><div id="sType"></div></fieldset>
+      <fieldset><legend>What's new</legend><div id="sNew"></div></fieldset>
+    </div>
+    <div id="list" class="sunken"></div>
+  </div>
+
+  <div id="status">
+    <div class="sunken" id="stShown"></div>
+    <div class="sunken" id="stFeed"></div>
+    <div class="sunken" id="stWiki"></div>
+  </div>
+</div>
+
+<div id="modal"><div class="dialog raised">
+  <div class="dtitle"><span id="dTitle"></span><button id="dX">r</button></div>
+  <div class="dbody" id="dBody"></div>
+  <div class="dbtns" id="dBtns"></div>
+</div></div>
+<div id="tip"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
