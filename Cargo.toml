@@ -1,0 +1,10 @@
+[package]
+name = "sprite-tracker"
+version = "1.0.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = "2"
+
+[dependencies]
+tauri = { version = "2", features = ["custom-protocol"] }

@@ -1,0 +1,12 @@
+{
+  "productName": "Sprite Tracker",
+  "version": "1.0.0",
+  "identifier": "com.rileyc313.spritetracker",
+  "build": { "frontendDist": "ui" },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [{ "label": "main", "title": "Sprite Tracker", "width": 1200, "height": 820, "minWidth": 640, "minHeight": 480, "decorations": false, "backgroundColor": "#3A3A3A" }],
+    "security": { "csp": null }
+  },
+  "bundle": { "icon": ["icons/icon.ico"] }
+}
