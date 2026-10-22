@@ -57,7 +57,7 @@ function variantsOf(s) {
 
 const isNew = v => v.added && (Date.now() - Date.parse(v.added)) / 864e5 <= NEW_DAYS;
 const rc = r => `var(--${(r || "unknown").toLowerCase()})`;
-const fmtDate = d => d ? new Date(d + "T12:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
+const fmtDate = d => d ? new Date(d.slice(0, 10) + "T12:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
 const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const BLOB = `<svg class="blob" viewBox="0 0 16 14" shape-rendering="crispEdges"><path fill="var(--rc)" d="M4,11h1v1h-1zM11,11h1v1h-1zM4,12h1v1h-1zM5,12h1v1h-1zM10,12h1v1h-1zM11,12h1v1h-1z"/><path fill="#000" d="M6,0h1v1h-1zM7,0h1v1h-1zM8,0h1v1h-1zM9,0h1v1h-1zM4,1h1v1h-1zM5,1h1v1h-1zM10,1h1v1h-1zM11,1h1v1h-1zM3,2h1v1h-1zM12,2h1v1h-1zM2,3h1v1h-1zM12,3h1v1h-1zM2,4h1v1h-1zM12,4h1v1h-1zM1,5h1v1h-1zM12,5h1v1h-1zM1,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM8,6h1v1h-1zM9,6h1v1h-1zM13,6h1v1h-1zM1,7h1v1h-1zM4,7h1v1h-1zM8,7h1v1h-1zM13,7h1v1h-1zM1,8h1v1h-1zM14,8h1v1h-1zM1,9h1v1h-1zM14,9h1v1h-1zM2,10h1v1h-1zM13,10h1v1h-1zM2,11h1v1h-1zM3,11h1v1h-1zM12,11h1v1h-1zM13,11h1v1h-1zM3,12h1v1h-1zM6,12h1v1h-1zM9,12h1v1h-1zM12,12h1v1h-1zM4,13h1v1h-1zM5,13h1v1h-1zM7,13h1v1h-1zM8,13h1v1h-1zM10,13h1v1h-1zM11,13h1v1h-1z"/><path fill="var(--rc)" d="M6,1h1v1h-1zM7,1h1v1h-1zM8,1h1v1h-1zM9,1h1v1h-1zM4,2h1v1h-1zM5,2h1v1h-1zM6,2h1v1h-1zM7,2h1v1h-1zM8,2h1v1h-1zM9,2h1v1h-1zM10,2h1v1h-1zM11,2h1v1h-1zM3,3h1v1h-1zM4,3h1v1h-1zM6,3h1v1h-1zM7,3h1v1h-1zM8,3h1v1h-1zM9,3h1v1h-1zM10,3h1v1h-1zM11,3h1v1h-1zM3,4h1v1h-1zM6,4h1v1h-1zM7,4h1v1h-1zM8,4h1v1h-1zM9,4h1v1h-1zM10,4h1v1h-1zM11,4h1v1h-1zM2,5h1v1h-1zM3,5h1v1h-1zM4,5h1v1h-1zM5,5h1v1h-1zM6,5h1v1h-1zM7,5h1v1h-1zM8,5h1v1h-1zM9,5h1v1h-1zM10,5h1v1h-1zM11,5h1v1h-1zM2,6h1v1h-1zM3,6h1v1h-1zM6,6h1v1h-1zM7,6h1v1h-1zM10,6h1v1h-1zM11,6h1v1h-1zM12,6h1v1h-1zM2,7h1v1h-1zM3,7h1v1h-1zM6,7h1v1h-1zM7,7h1v1h-1zM10,7h1v1h-1zM11,7h1v1h-1zM12,7h1v1h-1zM2,8h1v1h-1zM3,8h1v1h-1zM4,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM8,8h1v1h-1zM9,8h1v1h-1zM10,8h1v1h-1zM11,8h1v1h-1zM12,8h1v1h-1zM13,8h1v1h-1zM2,9h1v1h-1zM3,9h1v1h-1zM4,9h1v1h-1zM5,9h1v1h-1zM8,9h1v1h-1zM9,9h1v1h-1zM10,9h1v1h-1zM11,9h1v1h-1zM12,9h1v1h-1zM13,9h1v1h-1zM3,10h1v1h-1zM4,10h1v1h-1zM5,10h1v1h-1zM6,10h1v1h-1zM7,10h1v1h-1zM8,10h1v1h-1zM9,10h1v1h-1zM10,10h1v1h-1zM11,10h1v1h-1zM12,10h1v1h-1zM5,11h1v1h-1zM6,11h1v1h-1zM7,11h1v1h-1zM8,11h1v1h-1zM9,11h1v1h-1zM10,11h1v1h-1zM7,12h1v1h-1zM8,12h1v1h-1z"/><path fill="#fff" d="M5,3h1v1h-1zM4,4h1v1h-1zM5,4h1v1h-1zM5,7h1v1h-1zM9,7h1v1h-1z"/><path fill="#FF6FB5" d="M6,9h1v1h-1zM7,9h1v1h-1z"/><path fill="rgba(0,0,0,.35)" d="M4,11h1v1h-1zM11,11h1v1h-1zM4,12h1v1h-1zM5,12h1v1h-1zM10,12h1v1h-1zM11,12h1v1h-1z"/></svg>`; // stand-in sprite when the wiki has no picture yet
 const initials = n => n.replace(/[^A-Za-z0-9 -]/g, "").split(/[ -]/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
@@ -87,9 +87,17 @@ function sortSprites(list) {
     : RARITIES.indexOf(a.rarity) - RARITIES.indexOf(b.rarity) || (a.added || "9").localeCompare(b.added || "9") || a.name.localeCompare(b.name));
 }
 
+// picture: the variant's own (wiki, then feed), else the base sprite's with a variant badge, else the stand-in
+function picture(v) {
+  const own = images[fileFor(v.sp, v.type)] || (v.sp.imgs || {})[v.type] || (v.type === "Base" && v.sp.img);
+  if (own) return { url: own, own: true };
+  const base = images[fileFor(v.sp, "Base")] || v.sp.img;
+  return base ? { url: base, own: false } : null;
+}
+
 function art(v) {
-  const url = images[fileFor(v.sp, v.type)] || (v.type !== "Base" ? "" : images[fileFor(v.sp, "Base")]);
-  return url ? `<img src="${esc(url)}" alt="" loading="lazy" draggable="false" referrerpolicy="no-referrer">`
+  const p = picture(v);
+  return p ? `<img src="${esc(p.url)}" alt="" loading="lazy" draggable="false" referrerpolicy="no-referrer">${p.own ? "" : `<span class="vbadge" style="--vc:${v.color}" title="No picture of this variant yet; showing the base sprite">${esc(v.type)}</span>`}`
     : `<div class="fallback" style="--rc:${rc(v.sp.rarity)}">${BLOB}<b>${esc(initials(v.sp.name))}</b></div>`;
 }
 
@@ -120,7 +128,7 @@ function render() {
   else if (prefs.view === "list") {
     el.innerHTML = `<table class="grid"><tr><th></th><th>Sprite</th><th>Variant</th><th>Rarity</th><th>Added</th><th>How to get</th><th>Owned</th><th>Mastered</th></tr>` +
       (order => shown.slice().sort((a, b) => order.indexOf(a.sp.id) - order.indexOf(b.sp.id)))(sortSprites(spritesOf(s)).map(sp => sp.id)).map(v => {
-        const p = progress[v.key] || {}, img = images[fileFor(v.sp, v.type)];
+        const p = progress[v.key] || {}, img = (picture(v) || {}).url;
         return `<tr class="${p.o ? "" : "missing"}" data-key="${esc(v.key)}" data-tip="${esc(tipFor(v))}">
           <td>${img ? `<img class="thumb" src="${esc(img)}" alt="" referrerpolicy="no-referrer">` : `<span class="chip" style="--rc:${v.color}">&nbsp;</span>`}</td>
           <td>${esc(v.sp.name)}${isNew(v) ? ` <span class="chip" style="--rc:#C00000">NEW</span>` : ""}</td><td>${esc(v.type)}</td>

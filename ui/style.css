@@ -105,7 +105,9 @@ legend { padding: 0 3px; }
 .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
 .tile { padding: 4px; display: flex; flex-direction: column; gap: 3px; cursor: default; position: relative; }
 .tile .art { height: 88px; display: grid; place-items: center; background: var(--field); position: relative; overflow: hidden; }
+.tile .art:has(img) { background: #fff; }
 .tile .art img { max-width: 84px; max-height: 84px; image-rendering: auto; }
+.tile .vbadge { position: absolute; left: 3px; bottom: 7px; background: var(--vc); color: #fff; font-size: 9px; font-weight: bold; padding: 0 3px; text-shadow: 1px 1px rgba(0,0,0,.6); border: 1px solid rgba(0,0,0,.4); }
 .tile .fallback { width: 72px; height: 72px; position: relative; }
 .tile .fallback .blob { width: 72px; height: 63px; display: block; }
 .tile .fallback b { position: absolute; left: 0; right: 0; bottom: -4px; text-align: center; font: bold 11px "Microsoft Sans Serif", Tahoma; color: #fff; text-shadow: 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000; }
@@ -127,7 +129,7 @@ table.grid th { position: sticky; top: -8px; text-align: left; font-weight: norm
 table.grid td { padding: 2px 6px; border-bottom: 1px dotted var(--shadow); vertical-align: middle; }
 table.grid tr:hover td { background: var(--hover); }
 table.grid tr.missing td { color: var(--dim); }
-table.grid .thumb { width: 24px; height: 24px; object-fit: contain; vertical-align: middle; }
+table.grid .thumb { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; background: #fff; }
 .empty { padding: 40px; text-align: center; color: var(--dim); }
 
 /* status bar */
