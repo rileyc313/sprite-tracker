@@ -6,7 +6,7 @@
 fn muck95_settings() -> String {
     std::env::var("APPDATA")
         .ok()
-        .and_then(|d| std::fs::read_to_string(format!("{d}\Muck95\settings.json")).ok())
+        .and_then(|d| std::fs::read_to_string(format!(r"{d}\Muck95\settings.json")).ok())
         .unwrap_or_default()
 }
 
