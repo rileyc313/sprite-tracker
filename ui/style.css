@@ -1,0 +1,157 @@
+/* Sprite Tracker: Muck95's Windows 95 look. Colours are Muck95's App.Palette pairs; app.js swaps them. */
+:root {
+  --face: #C0C0C0; --hi: #FFFFFF; --light: #DFDFDF; --shadow: #808080; --dark: #000000;
+  --text: #000000; --dim: #808080; --hover: #CDCDCD; --field: #FFFFFF; --tip: #FFFFE1;
+  --navy: #000080; --header: #FFFFFF; --titleoff: #808080; --teal: #008080;
+  --rare: #2E7DD7; --epic: #9D4DBB; --legendary: #D37841; --mythic: #C9A227; --unknown: #808080;
+}
+:root.dark {
+  --face: #3A3A3A; --hi: #6A6A6A; --light: #4E4E4E; --shadow: #202020; --dark: #000000;
+  --text: #E8E8E8; --dim: #9A9A9A; --hover: #454545; --field: #262626; --tip: #2A2A2A;
+  --navy: #1C3F94; --titleoff: #4A4A4A; --teal: #00B3B3;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
+body { background: var(--face); color: var(--text); font: 11px "Microsoft Sans Serif", Tahoma, sans-serif; user-select: none; }
+button, input, select, textarea { font: inherit; color: var(--text); }
+
+/* bevels */
+.raised { background: var(--face); border: 1px solid; border-color: var(--hi) var(--dark) var(--dark) var(--hi); box-shadow: inset 1px 1px var(--light), inset -1px -1px var(--shadow); }
+.sunken { border: 1px solid; border-color: var(--shadow) var(--hi) var(--hi) var(--shadow); box-shadow: inset 1px 1px var(--dark), inset -1px -1px var(--light); }
+.etched { border: 1px solid; border-color: var(--shadow) var(--hi) var(--hi) var(--shadow); }
+
+#win { display: flex; flex-direction: column; height: 100%; border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); }
+
+/* title bar */
+#title { display: flex; align-items: center; gap: 4px; height: 20px; margin: 2px; padding: 0 2px; background: var(--navy); color: var(--header); font-weight: bold; }
+body.blur #title { background: var(--titleoff); }
+#title img { width: 16px; height: 16px; image-rendering: pixelated; pointer-events: none; }
+#title span { flex: 1; pointer-events: none; }
+#title button { width: 16px; height: 14px; padding: 0; font: 9px Marlett, "Segoe UI Symbol"; line-height: 10px; margin-left: 0; }
+#title button.close { margin-left: 2px; }
+
+button { background: var(--face); border: 1px solid; border-color: var(--hi) var(--dark) var(--dark) var(--hi); box-shadow: inset 1px 1px var(--light), inset -1px -1px var(--shadow); padding: 3px 10px; min-height: 22px; }
+button:active, button.on { border-color: var(--dark) var(--hi) var(--hi) var(--dark); box-shadow: inset 1px 1px var(--shadow), inset -1px -1px var(--light); }
+button:focus-visible { outline: 1px dotted var(--text); outline-offset: -4px; }
+button:disabled { color: var(--dim); text-shadow: 1px 1px var(--hi); }
+input[type=text], input[type=search], select, textarea { background: var(--field); border: 1px solid; border-color: var(--shadow) var(--hi) var(--hi) var(--shadow); box-shadow: inset 1px 1px var(--dark), inset -1px -1px var(--light); padding: 2px 3px; height: 21px; outline: none; }
+textarea { height: auto; width: 100%; resize: none; user-select: text; font: 11px Consolas, monospace; }
+select { padding: 1px; }
+input[type=checkbox] { appearance: none; width: 13px; height: 13px; margin: 0; background: var(--field); border: 1px solid; border-color: var(--shadow) var(--hi) var(--hi) var(--shadow); box-shadow: inset 1px 1px var(--dark), inset -1px -1px var(--light); position: relative; flex: none; }
+input[type=checkbox]:checked::after { content: ""; position: absolute; left: 3px; top: 0; width: 3px; height: 7px; border: solid var(--text); border-width: 0 2px 2px 0; transform: rotate(40deg); }
+label.chk { display: inline-flex; align-items: center; gap: 4px; }
+
+/* Win95 drop-down boxes (app.js combo) */
+.combo { display: inline-flex; align-items: center; height: 21px; background: var(--field); min-width: 110px; padding: 0 0 0 3px; outline: none; }
+.combo span { flex: 1; white-space: nowrap; overflow: hidden; padding-right: 6px; }
+.combo:focus span { background: var(--navy); color: var(--header); }
+.combo b { width: 16px; height: 17px; margin: 1px; display: grid; place-items: center; font: 9px Marlett, "Segoe UI Symbol"; font-weight: normal; }
+.clist { position: fixed; z-index: 300; background: var(--field); border: 1px solid var(--dark); max-height: 300px; overflow-y: auto; }
+.clist div { padding: 1px 4px; white-space: nowrap; }
+.clist div:hover, .clist div.sel:not(:hover) { background: var(--navy); color: var(--header); }
+.clist:hover div.sel:not(:hover) { background: none; color: var(--text); }
+select[size] { height: auto; width: 100%; }
+select[size] option:checked { background: var(--navy); color: var(--header); }
+.dialog .combo { width: 100%; }
+
+/* menus */
+#menubar { display: flex; padding: 0 2px; }
+.menu { position: relative; }
+.menu > .mlabel { padding: 3px 7px; display: block; }
+.menu.open > .mlabel { background: var(--navy); color: var(--header); }
+.drop { display: none; position: absolute; top: 100%; left: 0; z-index: 50; min-width: 210px; padding: 2px; }
+.menu.open .drop { display: block; }
+.drop div { padding: 3px 20px 3px 22px; white-space: nowrap; position: relative; display: flex; justify-content: space-between; gap: 24px; }
+.drop div:hover { background: var(--navy); color: var(--header); }
+.drop div.checked::before { content: "✓"; position: absolute; left: 7px; }
+.drop div.radio::before { content: "●"; position: absolute; left: 7px; font-size: 8px; top: 4px; }
+.drop hr { border: 0; border-top: 1px solid var(--shadow); border-bottom: 1px solid var(--hi); margin: 3px 1px; }
+.drop kbd { font: inherit; }
+
+/* toolbar */
+#toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 4px 6px; border-top: 1px solid var(--shadow); border-bottom: 1px solid var(--hi); box-shadow: 0 -1px var(--hi), 0 1px var(--shadow); margin: 1px 2px 4px; }
+#toolbar .sep { width: 2px; height: 20px; border-left: 1px solid var(--shadow); border-right: 1px solid var(--hi); }
+#search { width: 190px; }
+
+#main { flex: 1; display: flex; gap: 4px; min-height: 0; padding: 0 4px; }
+#side { width: 230px; flex: none; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 2px; }
+#list { flex: 1; overflow-y: auto; background: var(--field); padding: 8px; }
+@media (max-width: 760px) { #side { display: none; } }
+
+fieldset { border: 1px solid; border-color: var(--shadow) var(--hi) var(--hi) var(--shadow); box-shadow: inset 1px 1px var(--hi), 1px 1px var(--hi) ; margin: 0; padding: 6px 8px 8px; min-width: 0; }
+legend { padding: 0 3px; }
+
+/* progress bar, Win95 blocks */
+.bar { height: 16px; padding: 2px; background: var(--field); }
+.bar i { display: block; height: 100%; background: repeating-linear-gradient(90deg, var(--navy) 0 8px, transparent 8px 10px); }
+.bar.small { height: 10px; padding: 1px; }
+.bar.small i { background: repeating-linear-gradient(90deg, var(--c, var(--navy)) 0 5px, transparent 5px 6px); }
+.statrow { display: grid; grid-template-columns: 1fr auto; gap: 1px 6px; padding: 3px 4px; cursor: default; }
+.statrow:hover { background: var(--hover); }
+.statrow.active { background: var(--navy); color: var(--header); }
+.statrow .bar { grid-column: 1 / -1; }
+.big { font-size: 20px; font-weight: bold; margin: 2px 0 4px; }
+.newday { font-weight: bold; margin: 6px 0 2px; }
+.newday:first-child { margin-top: 0; }
+.newitem { padding: 2px 4px 2px 10px; }
+.newitem:hover { background: var(--navy); color: var(--header); }
+
+/* sprite groups */
+.group { margin-bottom: 10px; background: var(--face); }
+.group > legend { font-weight: bold; display: flex; gap: 6px; align-items: center; }
+.ghead { display: flex; gap: 8px; align-items: baseline; margin: 0 0 6px; color: var(--text); }
+.ghead .ability { flex: 1; color: var(--dim); }
+.ghead .count { font-weight: bold; white-space: nowrap; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
+.tile { padding: 4px; display: flex; flex-direction: column; gap: 3px; cursor: default; position: relative; }
+.tile .art { height: 88px; display: grid; place-items: center; background: var(--field); position: relative; overflow: hidden; }
+.tile .art img { max-width: 84px; max-height: 84px; image-rendering: auto; }
+.tile .fallback { width: 72px; height: 72px; position: relative; }
+.tile .fallback .blob { width: 72px; height: 63px; display: block; }
+.tile .fallback b { position: absolute; left: 0; right: 0; bottom: -4px; text-align: center; font: bold 11px "Microsoft Sans Serif", Tahoma; color: #fff; text-shadow: 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000; }
+.tile .ribbon { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--vc); }
+.tile .vname { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .sub { color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .acts { display: flex; align-items: center; justify-content: space-between; }
+.tile .star { min-height: 0; padding: 0 4px; font-size: 12px; line-height: 16px; color: var(--dim); }
+.tile .star.on { color: #E5B73B; }
+.tile.missing .art img, .tile.missing .fallback { filter: grayscale(1) opacity(.45); }
+body.nodim .tile.missing .art img, body.nodim .tile.missing .fallback { filter: none; }
+.tile .newtag { position: absolute; top: 2px; right: 2px; background: #C00000; color: #fff; font-weight: bold; padding: 0 3px; font-size: 9px; z-index: 1; }
+.tile .src { position: absolute; top: 2px; left: 2px; background: var(--tip); color: var(--text); border: 1px solid var(--dark); padding: 0 3px; font-size: 9px; z-index: 1; }
+.chip { display: inline-block; padding: 0 5px; color: #fff; font-weight: bold; text-shadow: 1px 1px rgba(0,0,0,.5); font-size: 10px; line-height: 15px; background: var(--rc); }
+
+/* list view */
+table.grid { border-collapse: collapse; width: 100%; background: var(--field); }
+table.grid th { position: sticky; top: -8px; text-align: left; font-weight: normal; padding: 2px 6px; background: var(--face); border: 1px solid; border-color: var(--hi) var(--dark) var(--dark) var(--hi); }
+table.grid td { padding: 2px 6px; border-bottom: 1px dotted var(--shadow); vertical-align: middle; }
+table.grid tr:hover td { background: var(--hover); }
+table.grid tr.missing td { color: var(--dim); }
+table.grid .thumb { width: 24px; height: 24px; object-fit: contain; vertical-align: middle; }
+.empty { padding: 40px; text-align: center; color: var(--dim); }
+
+/* status bar */
+#status { display: flex; gap: 2px; padding: 2px; }
+#status div { padding: 2px 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#status div:first-child { flex: 1; }
+
+/* dialogs */
+#modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 100; }
+#modal.show { display: grid; }
+.dialog { width: min(440px, calc(100vw - 32px)); padding: 2px; }
+.dialog .dtitle { height: 18px; display: flex; align-items: center; padding: 0 3px; background: var(--navy); color: var(--header); font-weight: bold; }
+.dialog .dtitle span { flex: 1; }
+.dialog .dtitle button { width: 16px; height: 14px; min-height: 0; padding: 0; font: 9px Marlett, "Segoe UI Symbol"; }
+.dialog .dbody { padding: 12px; display: flex; flex-direction: column; gap: 8px; user-select: text; max-height: 70vh; overflow-y: auto; }
+.dialog .dbody p { margin: 0; line-height: 1.45; }
+.dialog .dbtns { display: flex; justify-content: flex-end; gap: 6px; padding: 0 12px 10px; }
+.dialog .dbtns button { min-width: 75px; }
+.dialog .row { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 6px; }
+#tip { position: fixed; z-index: 200; max-width: 280px; background: var(--tip); color: var(--text); border: 1px solid var(--dark); padding: 3px 5px; pointer-events: none; display: none; line-height: 1.4; }
+
+::-webkit-scrollbar { width: 16px; height: 16px; background: var(--face); }
+::-webkit-scrollbar-track { background: repeating-conic-gradient(var(--face) 0 25%, var(--hi) 0 50%) 0 0 / 2px 2px; }
+::-webkit-scrollbar-thumb { background: var(--face); border: 1px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: inset 1px 1px var(--hi), inset -1px -1px var(--shadow); }
+::-webkit-scrollbar-button:single-button { background: var(--face); height: 16px; width: 16px; border: 1px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: inset 1px 1px var(--hi), inset -1px -1px var(--shadow); }
+::-webkit-scrollbar-corner { background: var(--face); }
+input::-webkit-calendar-picker-indicator { display: none !important; }
