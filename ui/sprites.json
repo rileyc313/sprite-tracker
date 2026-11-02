@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T10:00",
+  "updated": "2026-11-02T10:30",
   "note": "img / imgs (keyed by variant type) are picture URLs used when the Fortnite Wiki has none. Edit this file to add new sprites; the app pulls it from GitHub on launch. 'variants' overrides the season default, 'extra' adds to it, 'how' and 'vadded' are keyed by variant type.",
   "seasons": [
     {
@@ -122,7 +122,8 @@
           "ability": "Landing creates a shockwave that knocks back enemies (A$AP Rocky collab).",
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-flacko.jpg?w=256"
-          }
+          },
+          "img": "https://img.spritecatch.com/sprites/lil-flacko/base-ae2460ed.png"
         },
         {
           "id": "liluzivertjr",
