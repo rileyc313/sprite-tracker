@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:30",
+  "updated": "2026-11-02T10:00",
   "note": "img / imgs (keyed by variant type) are picture URLs used when the Fortnite Wiki has none. Edit this file to add new sprites; the app pulls it from GitHub on launch. 'variants' overrides the season default, 'extra' adds to it, 'how' and 'vadded' are keyed by variant type.",
   "seasons": [
     {
@@ -29,109 +29,141 @@
         {
           "id": "halfpeeld",
           "name": "Halfpeel'd",
-          "img": "https://accountshark.net/images/blog/s5-sprite-halfpeeld.jpg",
           "rarity": "Rare",
           "added": "2026-11-01",
-          "ability": "Shows nearby eliminations on your map; radius grows with level."
+          "ability": "Shows nearby eliminations on your map; radius grows with level.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-Halfpeeld.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-Halfpeeld.jpg?w=256"
+          }
         },
         {
           "id": "repete",
           "name": "Re-Pete",
-          "img": "https://accountshark.net/images/blog/s5-sprite-re-pete.jpg",
           "rarity": "Rare",
           "added": "2026-11-01",
-          "ability": "Faster reloads with a chance to refund ammo; both scale with level."
+          "ability": "Faster reloads with a chance to refund ammo; both scale with level.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-re-pete.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-re-pete.jpg?w=256"
+          }
         },
         {
           "id": "barryofish",
           "name": "Barry O'Fish",
-          "img": "https://accountshark.net/images/blog/s5-sprite-barry-ofish.jpg",
           "rarity": "Rare",
           "added": "2026-11-01",
-          "ability": "Cheaper sprint stamina in water; grants Slap at max level."
+          "ability": "Cheaper sprint stamina in water; grants Slap at max level.",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-barry-o-fish.jpg?w=256"
+          },
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-barry-ofish.jpg?w=256"
         },
         {
           "id": "wayfinder",
           "name": "Wayfinder",
-          "img": "https://accountshark.net/images/blog/s5-sprite-wayfinder.jpg",
           "rarity": "Rare",
           "added": "2026-11-01",
-          "ability": "Reveals nearby Sprites; extra items from Buried Chests."
+          "ability": "Reveals nearby Sprites; extra items from Buried Chests.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-wayfinder.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-wayfinder.jpg?w=256"
+          }
         },
         {
           "id": "chester",
           "name": "Chester",
-          "img": "https://accountshark.net/images/blog/s5-sprite-chester.jpg",
           "rarity": "Epic",
           "added": "2026-11-01",
-          "ability": "Chance for extra chest loot (rises with level); no fall damage."
+          "ability": "Chance for extra chest loot (rises with level); no fall damage.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-chester.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-chester.jpg?w=256"
+          }
         },
         {
           "id": "exmarks",
           "name": "Exmarks",
-          "img": "https://accountshark.net/images/blog/s5-sprite-exmarks.jpg",
           "rarity": "Epic",
           "added": "2026-11-01",
-          "ability": "Reveals Treasure Maps and Wanted Posters; spawns a Treasure Map at max level."
+          "ability": "Reveals Treasure Maps and Wanted Posters; spawns a Treasure Map at max level.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-exmarks.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-exmarks.jpg?w=256"
+          }
         },
         {
           "id": "kelper",
           "name": "Kelper",
-          "img": "https://accountshark.net/images/blog/s5-sprite-kelper.jpg",
           "rarity": "Epic",
           "added": "2026-11-01",
-          "ability": "Heals over time in water, scaling with level."
+          "ability": "Heals over time in water, scaling with level.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-kelper.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-kelper.jpg?w=256"
+          }
         },
         {
           "id": "lilsquibbly",
           "name": "Lil' Squibbly",
-          "img": "https://accountshark.net/images/blog/s5-sprite-lil-squibbly.jpg",
           "rarity": "Epic",
           "added": "2026-11-01",
-          "ability": "Jumping into a fishing hole fishes it, with bonus loot per level."
+          "ability": "Jumping into a fishing hole fishes it, with bonus loot per level.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-lil-squibbly.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-squibbly.jpg?w=256"
+          }
         },
         {
           "id": "lilflacko",
           "name": "Lil' Flacko",
-          "img": "https://accountshark.net/images/blog/s5-sprite-lil-flacko.jpg",
           "rarity": "Legendary",
           "added": "2026-11-01",
-          "ability": "Landing creates a shockwave that knocks back enemies (A$AP Rocky collab)."
+          "ability": "Landing creates a shockwave that knocks back enemies (A$AP Rocky collab).",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-flacko.jpg?w=256"
+          }
         },
         {
           "id": "liluzivertjr",
           "name": "Lil' Uzi Vert Jr.",
-          "img": "https://accountshark.net/images/blog/s5-sprite-lil-uzi-vert-jr.jpg",
           "rarity": "Legendary",
           "added": "2026-11-01",
           "ability": "Restoring shields creates a Chug Splash heal for nearby players (Lil Uzi Vert collab).",
-          "note": "Not obtainable yet at launch"
+          "note": "Not obtainable yet at launch",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-lil-uzi-vert-jr.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-uzi-vert-jr.jpg?w=256"
+          }
         },
         {
           "id": "transpondersnail",
           "name": "Transponder Snail",
-          "img": "https://accountshark.net/images/blog/s5-sprite-transponder-snail.jpg",
           "rarity": "Legendary",
           "added": "2026-11-01",
           "ability": "Extra resources from pickups, shared with equipped teammates (One Piece collab).",
-          "variants": []
+          "variants": [],
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-transponder-snail.jpg?w=256"
         },
         {
           "id": "sweetdreams",
           "name": "Sweet Dreams",
-          "img": "https://accountshark.net/images/blog/s5-sprite-sweet-dreams.jpg",
           "rarity": "Mythic",
           "added": "2026-11-01",
           "ability": "A random item each level; Mythic loot at max level.",
-          "variants": []
+          "variants": [],
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-sweet-dreams.jpg?w=256"
         },
         {
           "id": "plundarrgh",
           "name": "Plundarrgh",
-          "img": "https://accountshark.net/images/blog/s5-sprite-plundarrgh.jpg",
           "rarity": "Mythic",
           "added": "2026-11-01",
-          "ability": "Opening a chest boosts pickaxe and movement speed."
+          "ability": "Opening a chest boosts pickaxe and movement speed.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-plundarrgh.jpg?w=256",
+          "imgs": {
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-plundarrgh.jpg?w=256"
+          }
         }
       ]
     },
