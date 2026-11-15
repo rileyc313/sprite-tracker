@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T10:30",
+  "updated": "2026-11-15T12:00",
   "note": "img / imgs (keyed by variant type) are picture URLs used when the Fortnite Wiki has none. Edit this file to add new sprites; the app pulls it from GitHub on launch. 'variants' overrides the season default, 'extra' adds to it, 'how' and 'vadded' are keyed by variant type.",
   "seasons": [
     {
@@ -22,7 +22,7 @@
         },
         "Cursed": {
           "color": "#6C3483",
-          "effect": "Not obtainable yet"
+          "effect": "Higher chance of finding rare Sprites, but you take damage in water"
         }
       },
       "sprites": [
@@ -34,7 +34,8 @@
           "ability": "Shows nearby eliminations on your map; radius grows with level.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-Halfpeeld.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-Halfpeeld.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-Halfpeeld.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Halfpeeld.jpg?w=256"
           }
         },
         {
@@ -45,7 +46,8 @@
           "ability": "Faster reloads with a chance to refund ammo; both scale with level.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-re-pete.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-re-pete.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-re-pete.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Re-Pete.jpg?w=256"
           }
         },
         {
@@ -55,7 +57,8 @@
           "added": "2026-11-01",
           "ability": "Cheaper sprint stamina in water; grants Slap at max level.",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-barry-o-fish.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-barry-o-fish.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Barry-OFish.jpg?w=256"
           },
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-barry-ofish.jpg?w=256"
         },
@@ -67,7 +70,8 @@
           "ability": "Reveals nearby Sprites; extra items from Buried Chests.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-wayfinder.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-wayfinder.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-wayfinder.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Wayfinder.jpg?w=256"
           }
         },
         {
@@ -78,7 +82,8 @@
           "ability": "Chance for extra chest loot (rises with level); no fall damage.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-chester.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-chester.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-chester.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-chester.jpg?w=256"
           }
         },
         {
@@ -89,7 +94,8 @@
           "ability": "Reveals Treasure Maps and Wanted Posters; spawns a Treasure Map at max level.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-exmarks.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-exmarks.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-exmarks.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Exmarks.jpg?w=256"
           }
         },
         {
@@ -100,7 +106,8 @@
           "ability": "Heals over time in water, scaling with level.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-kelper.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-kelper.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-kelper.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Kelper.jpg?w=256"
           }
         },
         {
@@ -111,7 +118,8 @@
           "ability": "Jumping into a fishing hole fishes it, with bonus loot per level.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-lil-squibbly.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-squibbly.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-squibbly.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Squibbly.jpg?w=256"
           }
         },
         {
@@ -121,7 +129,8 @@
           "added": "2026-11-01",
           "ability": "Landing creates a shockwave that knocks back enemies (A$AP Rocky collab).",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-flacko.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-flacko.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Flacko.jpg?w=256"
           },
           "img": "https://img.spritecatch.com/sprites/lil-flacko/base-ae2460ed.png"
         },
@@ -134,7 +143,8 @@
           "note": "Not obtainable yet at launch",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-lil-uzi-vert-jr.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-uzi-vert-jr.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-uzi-vert-jr.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Uzi-Vert-Jr.jpg?w=256"
           }
         },
         {
@@ -163,8 +173,17 @@
           "ability": "Opening a chest boosts pickaxe and movement speed.",
           "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-plundarrgh.jpg?w=256",
           "imgs": {
-            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-plundarrgh.jpg?w=256"
+            "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-plundarrgh.jpg?w=256",
+            "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Plundarrgh.jpg?w=256"
           }
+        },
+        {
+          "id": "minimiku",
+          "name": "Mini Miku",
+          "rarity": "Mythic",
+          "added": "2026-11-15",
+          "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests.",
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/Mini-Miku-Sprite-Variants-in-Fortnite-1.jpg?w=256"
         }
       ]
     },
