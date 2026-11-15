@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T12:00",
+  "updated": "2026-11-15T13:00",
   "note": "img / imgs (keyed by variant type) are picture URLs used when the Fortnite Wiki has none. Edit this file to add new sprites; the app pulls it from GitHub on launch. 'variants' overrides the season default, 'extra' adds to it, 'how' and 'vadded' are keyed by variant type.",
   "seasons": [
     {
@@ -23,6 +23,11 @@
         "Cursed": {
           "color": "#6C3483",
           "effect": "Higher chance of finding rare Sprites, but you take damage in water"
+        },
+        "Gold": {
+          "color": "#E5B73B",
+          "effect": "3x elimination XP (coming Nov 22)",
+          "added": "2026-11-22"
         }
       },
       "sprites": [
@@ -36,7 +41,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-Halfpeeld.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Halfpeeld.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "repete",
@@ -48,7 +56,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-re-pete.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Re-Pete.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "barryofish",
@@ -60,7 +71,10 @@
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-barry-o-fish.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Barry-OFish.jpg?w=256"
           },
-          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-barry-ofish.jpg?w=256"
+          "img": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-sprite-barry-ofish.jpg?w=256",
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "wayfinder",
@@ -72,7 +86,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-wayfinder.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Wayfinder.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "chester",
@@ -84,7 +101,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-chester.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-chester.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "exmarks",
@@ -96,7 +116,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-exmarks.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Exmarks.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "kelper",
@@ -108,7 +131,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-kelper.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Kelper.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "lilsquibbly",
@@ -120,7 +146,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-squibbly.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Squibbly.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "lilflacko",
@@ -132,7 +161,10 @@
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-flacko.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Flacko.jpg?w=256"
           },
-          "img": "https://img.spritecatch.com/sprites/lil-flacko/base-ae2460ed.png"
+          "img": "https://img.spritecatch.com/sprites/lil-flacko/base-ae2460ed.png",
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "liluzivertjr",
@@ -145,7 +177,10 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-lil-uzi-vert-jr.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Lil-Uzi-Vert-Jr.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "transpondersnail",
@@ -175,21 +210,30 @@
           "imgs": {
             "Fortune": "https://static.beebom.com/wp-content/uploads/2026/11/fn-treasure-hunters-fortune-sprite-plundarrgh.jpg?w=256",
             "Cursed": "https://static.beebom.com/wp-content/uploads/2026/11/fn-cursed-sprite-Plundarrgh.jpg?w=256"
-          }
+          },
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "minimiku",
           "name": "Mini Miku",
           "rarity": "Mythic",
           "added": "2026-11-15",
-          "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests."
+          "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests.",
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "squiplash",
           "name": "Squiplash",
           "rarity": "Epic",
           "added": "2026-11-15",
-          "ability": "Drops a Healing Smoke Bomb when your health is low; cooldown, duration and healing improve with level."
+          "ability": "Drops a Healing Smoke Bomb when your health is low; cooldown, duration and healing improve with level.",
+          "extra": [
+            "Gold"
+          ]
         },
         {
           "id": "zee",
@@ -198,6 +242,16 @@
           "added": "2026-11-15",
           "variants": [],
           "ability": "Grants regenerating Zero Point dash charges; more charges and faster recharge with level. Secret: only shows in the menu once obtained."
+        },
+        {
+          "id": "siroscar2",
+          "name": "Sir Oscar the Second",
+          "rarity": "Legendary",
+          "added": "2026-11-22",
+          "ability": "More Pickaxe damage, and a short speed boost when your Shield breaks; both scale with level.",
+          "extra": [
+            "Gold"
+          ]
         }
       ]
     },
