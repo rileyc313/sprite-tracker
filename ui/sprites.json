@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T13:00",
+  "updated": "2026-11-15T13:50",
   "note": "img / imgs (keyed by variant type) are picture URLs used when the Fortnite Wiki has none. Edit this file to add new sprites; the app pulls it from GitHub on launch. 'variants' overrides the season default, 'extra' adds to it, 'how' and 'vadded' are keyed by variant type.",
   "seasons": [
     {
