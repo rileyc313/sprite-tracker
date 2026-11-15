@@ -223,7 +223,13 @@
           "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests.",
           "extra": [
             "Gold"
-          ]
+          ],
+          "img": "https://techwiser.com/wp-content/uploads/2026/11/Mini-Miku-Sprite.webp",
+          "imgs": {
+            "Fortune": "https://techwiser.com/wp-content/uploads/2026/11/Fortune-Mini-Miku-Sprite.webp",
+            "Cursed": "https://techwiser.com/wp-content/uploads/2026/11/Cursed-mini-Miku-Sprite.webp",
+            "Gold": "https://techwiser.com/wp-content/uploads/2026/11/Gold-Mini-Miku-Sprite.webp"
+          }
         },
         {
           "id": "squiplash",
