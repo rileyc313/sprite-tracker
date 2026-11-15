@@ -242,14 +242,6 @@
           ]
         },
         {
-          "id": "zee",
-          "name": "Zee",
-          "rarity": "Mythic",
-          "added": "2026-11-15",
-          "variants": [],
-          "ability": "Grants regenerating Zero Point dash charges; more charges and faster recharge with level. Secret: only shows in the menu once obtained."
-        },
-        {
           "id": "siroscar2",
           "name": "Sir Oscar the Second",
           "rarity": "Legendary",
