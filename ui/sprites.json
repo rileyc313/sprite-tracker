@@ -182,8 +182,22 @@
           "name": "Mini Miku",
           "rarity": "Mythic",
           "added": "2026-11-15",
-          "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests.",
-          "img": "https://static.beebom.com/wp-content/uploads/2026/11/Mini-Miku-Sprite-Variants-in-Fortnite-1.jpg?w=256"
+          "ability": "Emoting with other players grants a Friendship Bubble that blocks projectiles and gunfire. Fortune also reveals nearby chests."
+        },
+        {
+          "id": "squiplash",
+          "name": "Squiplash",
+          "rarity": "Epic",
+          "added": "2026-11-15",
+          "ability": "Drops a Healing Smoke Bomb when your health is low; cooldown, duration and healing improve with level."
+        },
+        {
+          "id": "zee",
+          "name": "Zee",
+          "rarity": "Mythic",
+          "added": "2026-11-15",
+          "variants": [],
+          "ability": "Grants regenerating Zero Point dash charges; more charges and faster recharge with level. Secret: only shows in the menu once obtained."
         }
       ]
     },
